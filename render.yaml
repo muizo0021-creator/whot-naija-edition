@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: whot-backend
+    runtime: node
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: CORS_ORIGIN
+        value: https://whot-frontend.onrender.com  # Update with actual frontend URL after deployment
+  - type: web
+    name: whot-frontend
+    runtime: static
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: VITE_SOCKET_SERVER_URL
+        value: https://whot-backend.onrender.com  # Update with actual backend URL after deployment
