@@ -129,7 +129,7 @@ class SocketService {
       console.warn('Production socket URL missing! Set VITE_SOCKET_SERVER_URL environment variable.');
     }
 
-    const url = serverUrl || (import.meta.env.VITE_SOCKET_SERVER_URL as string) || 'http://localhost:3004';
+    const url = serverUrl || 'https://backend-lyart-nine-11.vercel.app';
     this.status = 'connecting';
     this.emitEvent('connection-status-changed', 'connecting');
 

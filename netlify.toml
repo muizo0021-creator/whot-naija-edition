@@ -1,0 +1,19 @@
+[build]
+  publish = "dist"
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[dev]
+  command = "npm run dev"
+  port = 5173
+  publish = "dist"
+
+# Environment variables will be set in Netlify dashboard
+# VITE_SOCKET_SERVER_URL = "https://your-railway-backend-url.up.railway.app"
